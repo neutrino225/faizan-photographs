@@ -25,6 +25,31 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 });
 
+/* LAZY LOADING */
+const blurDivs = document.querySelectorAll(".blur-load");
+
+blurDivs.forEach((blurDiv) => {
+	const img = blurDiv.querySelector("img") as HTMLImageElement;
+	const div = blurDiv as HTMLDivElement;
+
+	function loaded(){
+		div.classList.add("loaded");
+		/* remove the animation*/
+		div.classList.remove("blur-load");
+		/* clear the background image of div */
+		div.style.backgroundImage = "none";
+		img.style.aspectRatio = "unset";
+		img.removeEventListener("load", loaded);
+	}
+
+	if(img.complete){
+		loaded();
+	}else{
+		img.addEventListener("load", loaded);
+	}
+});
+/* */
+
 const header = document.querySelector(".header");
 let lastScrollPosition = 0;
 

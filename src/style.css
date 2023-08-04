@@ -261,6 +261,22 @@ nav h3 {
 	justify-content: space-between;
 }
 
+.blur-load {
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+}
+
+.blur-load.loaded > img {
+	opacity: 1;
+}
+
+.blur-load > img {
+	opacity: 0;
+	transition: opacity 0.25s ease-in-out;
+}
+
 #gallery .image-wrapper .column {
 	width: 24.5%;
 	height: 100%;
@@ -272,8 +288,10 @@ nav h3 {
 #gallery .image-wrapper .column img {
 	width: 100%;
 	height: 100%;
+	aspect-ratio: 1/1;
 	object-fit: cover;
 	padding-bottom: 15px;
+	object-position: center;
 }
 
 .grid-item {
