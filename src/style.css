@@ -17,6 +17,7 @@ body {
 	font-family: "Poppins", sans-serif;
 	color: #0b0d18;
 	overflow-x: hidden;
+	background-color: #e7e8f4;
 }
 
 header {
@@ -119,6 +120,40 @@ nav h3 {
 	}
 }
 
+.scrollDown{
+	text-decoration: none;
+	color: #0b0d18;
+}
+
+.fa-angle-down{
+	font-size: 2rem;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%) translateY(-80%);
+	animation: 1s bounce infinite;
+}
+
+.fa-angle-down:hover{
+	animation-play-state: paused;
+	scroll-behavior: smooth;
+	font-size: 2.2rem;
+}
+
+@keyframes bounce {
+	0% {
+		transform: translateX(-50%) translateY(-80%);
+	}
+
+	50% {
+		transform: translateX(-50%) translateY(-70%);
+	}
+
+	100% {
+		transform: translateX(-50%) translateY(-80%);
+	}
+}
+
 @media screen and (max-width: 1600px) {
 	#main {
 		padding: 0 3rem;
@@ -195,25 +230,30 @@ nav h3 {
 		font-size: 1rem;
 		text-align: center;
 	}
+
+	.revealUp{
+		padding: 0 2rem 0 4rem;
+	}
 }
 
 @media screen and (max-width: 768px) {
+
 	#main {
 		flex-direction: column;
 		padding: 0 1.5rem;
 	}
 
 	.main-text-wrapper {
-		margin-top: 15rem;
+		margin-top: 9rem;
 	}
 
 	.main-text-wrapper h1 {
-		font-size: 4vw;
+		font-size: 4.59vw;
 		font-weight: 800;
 	}
 
 	.main-text-wrapper p {
-		font-size: 0.8rem;
+		font-size: 1rem;
 		text-align: center;
 	}
 
@@ -231,10 +271,11 @@ nav h3 {
 }
 
 #gallery {
+	padding-top: 2rem;
 	width: 100%;
 	min-height: 100vh;
 	display: flex;
-	padding: 0 2rem 2rem 0;
+	padding: 0 2rem 2rem 2rem;
 	background-color: #e7e8f4;
 	justify-content: center;
 	align-items: center;
@@ -242,6 +283,7 @@ nav h3 {
 }
 
 .revealUp {
+	margin-top: 2rem;
 	opacity: 0;
 	visibility: hidden;
 }
@@ -303,6 +345,9 @@ nav h3 {
 }
 
 @media screen and (max-width: 786px) {
+	#gallery{
+		padding: 0 2rem 2rem 0;
+	}
 	#gallery .image-wrapper {
 		flex-direction: column;
 		align-items: center;
@@ -359,7 +404,7 @@ nav h3 {
 
 .footer {
 	background: #0b0d18;
-	padding: 30px 0px;
+	padding: 10px 0px;
 	font-family: "Play", sans-serif;
 	text-align: center;
 }
